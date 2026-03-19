@@ -14,4 +14,5 @@ export interface ChargingSession {
   // Joined fields
   users?: { email: string };
   stations?: { name: string };
+  connectors?: { connector_type: string };
 }
