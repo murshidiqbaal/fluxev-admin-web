@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 
 interface GenerateQrModalProps {
   connector: {
-    id: string;
+    connector_id: string;
     stations?: { name: string };
     connector_type: string;
     max_power_kw: number;
@@ -13,9 +13,11 @@ interface GenerateQrModalProps {
   onClose: () => void;
 }
 
+
 export default function GenerateQrModal({ connector, onClose }: GenerateQrModalProps) {
-  const qrValue = `fluxev://start?connector_id=${connector.id}`;
+  const qrValue = `fluxev://start?connector_id=${connector.connector_id}`;
   const subtitle = `${connector.stations?.name || 'Station'} - ${connector.connector_type.toUpperCase()} ${connector.max_power_kw}kW`;
+
 
   return (
     <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">

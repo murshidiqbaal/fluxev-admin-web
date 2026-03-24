@@ -42,7 +42,8 @@ export default function AddConnectorModal({ onClose }: { onClose: () => void }) 
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <option value="">Select a Station...</option>
-              {stations?.map((s) => <option key={s.id} value={s.id}>{s.name} - {s.address}</option>)}
+              {stations?.map((s) => <option key={s.station_id} value={s.station_id}>{s.name} - {s.address}</option>)}
+
             </select>
             {errors.station_id && <p className="text-destructive text-sm">{errors.station_id.message}</p>}
           </div>

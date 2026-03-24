@@ -45,11 +45,13 @@ export default function ConnectorTable({ connectors, onEdit }: Props) {
                 </tr>
               ) : (
                 connectors.map((connector) => (
-                  <tr key={connector.id} className="hover:bg-primary/5 transition-all duration-200">
+                  <tr key={connector.connector_id} className="hover:bg-primary/5 transition-all duration-200">
+
                     <td className="px-6 py-4 font-medium">
                       <div className="flex flex-col">
                         <span>{connector.stations?.name || 'Unknown Station'}</span>
-                        <span className="text-[10px] text-muted-foreground font-mono">{connector.id.slice(0, 8)}...</span>
+                        <span className="text-[10px] text-muted-foreground font-mono">{connector.connector_id.slice(0, 8)}...</span>
+
                       </div>
                     </td>
                     <td className="px-6 py-4">
@@ -85,10 +87,11 @@ export default function ConnectorTable({ connectors, onEdit }: Props) {
                         <Edit className="h-4 w-4" />
                       </Button>
                       <Button 
-                        onClick={() => handleDelete(connector.id)} 
+                        onClick={() => handleDelete(connector.connector_id)} 
                         disabled={deleteMutation.isPending} 
                         className="h-8 w-8 p-0 bg-destructive/10 text-rose-400 border border-destructive/20 hover:bg-destructive/20"
                       >
+
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     </td>

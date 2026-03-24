@@ -33,10 +33,11 @@ export default function EditStationModal({ station, onClose }: { station: Statio
   });
 
   const onSubmit = (data: StationFormValues) => {
-    updateMutation.mutate({ id: station.id, ...data }, {
+    updateMutation.mutate({ id: station.station_id, ...data }, {
       onSuccess: () => onClose(),
     });
   };
+
 
   return (
     <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">

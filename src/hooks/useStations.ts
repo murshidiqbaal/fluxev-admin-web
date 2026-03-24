@@ -17,6 +17,7 @@ export function useStation(id: string) {
   });
 }
 
+
 export function useCreateStation() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -36,6 +37,7 @@ export function useUpdateStation() {
     },
   });
 }
+
 
 export function useDeleteStation() {
   const queryClient = useQueryClient();

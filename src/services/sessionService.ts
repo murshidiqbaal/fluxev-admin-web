@@ -5,10 +5,17 @@ export const sessionService = {
   getSessions: async () => {
     const { data, error } = await supabase
       .from('charging_sessions')
-      .select('*, users(email), stations(name)')
+      .select(`
+        *,
+        users:user_id (full_name, email),
+        stations:station_id (name),
+        connectors:connector_id (connector_type)
+      `)
       .order('start_time', { ascending: false });
+
       
     if (error) throw new Error(error.message);
     return data as ChargingSession[];
   }
+
 };

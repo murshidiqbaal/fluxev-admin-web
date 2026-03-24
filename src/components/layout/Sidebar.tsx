@@ -9,7 +9,8 @@ import {
   Wallet, 
   BarChart3, 
   Settings,
-  Zap
+  Zap,
+  Calendar
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -17,11 +18,13 @@ const navItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
   { name: 'Stations', path: '/stations', icon: MapPin },
   { name: 'Connectors', path: '/connectors', icon: PlugZap },
+  { name: 'Reservations', path: '/reservations', icon: Calendar },
   { name: 'Sessions', path: '/sessions', icon: BatteryCharging },
   { name: 'Users', path: '/users', icon: Users },
   { name: 'Wallets', path: '/wallets', icon: Wallet },
   { name: 'Analytics', path: '/analytics', icon: BarChart3 },
 ];
+
 
 export default function Sidebar() {
   return (

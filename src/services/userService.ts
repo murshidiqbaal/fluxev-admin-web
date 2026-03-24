@@ -8,8 +8,9 @@ export const userService = {
     return data as User[];
   },
   updateUserRole: async (id: string, role: UserRole) => {
-    const { data, error } = await supabase.from('users').update({ role }).eq('id', id).select().single();
+    const { data, error } = await supabase.from('users').update({ role }).eq('user_id', id).select().single();
     if (error) throw new Error(error.message);
     return data as User;
   }
+
 };

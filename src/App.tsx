@@ -10,6 +10,8 @@ import UsersPage from '@/features/users/UsersPage';
 import WalletsPage from '@/features/wallets/WalletsPage';
 import TransactionsPage from '@/features/wallets/TransactionsPage';
 import AnalyticsPage from '@/features/analytics/AnalyticsPage';
+import ReservationsPage from '@/features/reservations/ReservationsPage';
+
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, isAdmin, loading } = useAuth();
@@ -32,7 +34,9 @@ export default function App() {
           <Route path="connectors" element={<ConnectorsPage />} />
           <Route path="sessions" element={<ChargingSessionsPage />} />
           <Route path="users" element={<UsersPage />} />
+          <Route path="reservations" element={<ReservationsPage />} />
           <Route path="wallets" element={<WalletsPage />} />
+
           <Route path="transactions" element={<TransactionsPage />} />
           <Route path="analytics" element={<AnalyticsPage />} />
         </Route>

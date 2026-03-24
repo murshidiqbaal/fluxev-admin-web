@@ -28,7 +28,8 @@ export default function UserTable({ users }: { users: User[] }) {
               </tr>
             ) : (
               users.map((user) => (
-                <tr key={user.id} className="border-b last:border-0 hover:bg-muted/50 transition-colors">
+                <tr key={user.user_id} className="border-b last:border-0 hover:bg-muted/50 transition-colors">
+
                   <td className="px-6 py-4 font-medium">{user.email}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {new Date(user.created_at).toLocaleDateString()}
@@ -36,7 +37,8 @@ export default function UserTable({ users }: { users: User[] }) {
                   <td className="px-6 py-4 text-right">
                     <select
                       value={user.role}
-                      onChange={(e) => handleRoleChange(user.id, e.target.value as UserRole)}
+                      onChange={(e) => handleRoleChange(user.user_id, e.target.value as UserRole)}
+
                       disabled={updateRoleMutation.isPending}
                       className="h-8 rounded-md border border-input bg-background px-2 py-1 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >

@@ -26,13 +26,15 @@ export default function SessionTable({ sessions }: { sessions: ChargingSession[]
               </tr>
             ) : (
               sessions.map((session) => (
-                <tr key={session.id} className="hover:bg-primary/5 transition-all duration-200">
-                  <td className="px-6 py-4 font-medium">
+                <tr key={session.session_id} className="hover:bg-primary/5 transition-all duration-200">
+
+                  <td className="px-6 py-4">
                     <div className="flex flex-col">
-                      <span className="text-foreground">{session.users?.email || 'Guest User'}</span>
-                      <span className="text-[10px] text-muted-foreground font-mono">{session.user_id.slice(0, 8)}</span>
+                      <span className="text-foreground font-bold">{session.users?.full_name || 'Guest User'}</span>
+                      <span className="text-[10px] text-muted-foreground">{session.users?.email}</span>
                     </div>
                   </td>
+
                   <td className="px-6 py-4">
                     <div className="flex flex-col">
                       <span className="text-cyan-400 font-semibold">{session.stations?.name || 'Unknown Station'}</span>

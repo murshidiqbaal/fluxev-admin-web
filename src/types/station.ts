@@ -1,7 +1,7 @@
 export type StationStatus = 'active' | 'inactive' | 'maintenance';
 
 export interface Station {
-  id: string;
+  station_id: string;
   name: string;
   address: string;
   latitude: number;
@@ -11,5 +11,6 @@ export interface Station {
   created_at?: string;
 }
 
-export type StationInsert = Omit<Station, 'id' | 'created_at'>;
+export type StationInsert = Omit<Station, 'station_id' | 'created_at'>;
+
 export type StationUpdate = Partial<StationInsert>;

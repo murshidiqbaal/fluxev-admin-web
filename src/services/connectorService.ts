@@ -14,13 +14,15 @@ export const connectorService = {
     return data as Connector;
   },
   updateConnector: async (id: string, connector: ConnectorUpdate) => {
-    const { data, error } = await supabase.from('connectors').update(connector).eq('id', id).select().single();
+    const { data, error } = await supabase.from('connectors').update(connector).eq('connector_id', id).select().single();
     if (error) throw new Error(error.message);
     return data as Connector;
   },
+
   deleteConnector: async (id: string) => {
-    const { error } = await supabase.from('connectors').delete().eq('id', id);
+    const { error } = await supabase.from('connectors').delete().eq('connector_id', id);
     if (error) throw new Error(error.message);
     return true;
   }
+
 };

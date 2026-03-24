@@ -40,7 +40,8 @@ export default function StationTable({ stations, onEdit }: Props) {
               </tr>
             ) : (
               stations.map((station) => (
-                <tr key={station.id} className="border-b last:border-0 hover:bg-muted/50 transition-colors">
+                <tr key={station.station_id} className="border-b last:border-0 hover:bg-muted/50 transition-colors">
+
                   <td className="px-6 py-4 font-medium">{station.name}</td>
                   <td className="px-6 py-4">{station.address}</td>
                   <td className="px-6 py-4 text-muted-foreground">
@@ -60,7 +61,8 @@ export default function StationTable({ stations, onEdit }: Props) {
                     <Button onClick={() => onEdit(station)} className="h-8 w-8 p-0 bg-transparent text-foreground border border-border hover:bg-secondary">
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button onClick={() => handleDelete(station.id)} disabled={deleteMutation.isPending} className="h-8 w-8 p-0 bg-transparent text-destructive border border-border hover:bg-destructive/10">
+                    <Button onClick={() => handleDelete(station.station_id)} disabled={deleteMutation.isPending} className="h-8 w-8 p-0 bg-transparent text-destructive border border-border hover:bg-destructive/10">
+
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </td>

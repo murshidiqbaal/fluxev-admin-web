@@ -8,23 +8,26 @@ export const stationService = {
     return data as Station[];
   },
   getStationById: async (id: string) => {
-    const { data, error } = await supabase.from('stations').select('*').eq('id', id).single();
+    const { data, error } = await supabase.from('stations').select('*').eq('station_id', id).single();
     if (error) throw new Error(error.message);
     return data as Station;
   },
+
   createStation: async (station: StationInsert) => {
     const { data, error } = await supabase.from('stations').insert([station]).select().single();
     if (error) throw new Error(error.message);
     return data as Station;
   },
   updateStation: async (id: string, station: StationUpdate) => {
-    const { data, error } = await supabase.from('stations').update(station).eq('id', id).select().single();
+    const { data, error } = await supabase.from('stations').update(station).eq('station_id', id).select().single();
     if (error) throw new Error(error.message);
     return data as Station;
   },
+
   deleteStation: async (id: string) => {
-    const { error } = await supabase.from('stations').delete().eq('id', id);
+    const { error } = await supabase.from('stations').delete().eq('station_id', id);
     if (error) throw new Error(error.message);
     return true;
   }
+
 };
