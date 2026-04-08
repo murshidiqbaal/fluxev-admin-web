@@ -3,7 +3,6 @@ import { useWallets, useUpdateBalance } from '@/hooks/useWallets';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { 
-  Wallet as WalletIcon, 
   Plus, 
   Minus, 
   History, 

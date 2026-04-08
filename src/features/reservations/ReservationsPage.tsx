@@ -3,7 +3,7 @@ import { useReservations } from '@/hooks/useReservations';
 import ReservationTable from './ReservationTable';
 import ReservationDetailModal from './ReservationDetailModal';
 import { type Reservation } from '@/types/reservation';
-import { Bookmark, RefreshCw } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function ReservationsPage() {

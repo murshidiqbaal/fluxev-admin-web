@@ -28,7 +28,7 @@ export default function DashboardPage() {
               </div>
             ) : (
               recentSessions.map((session) => (
-                <div key={session.id} className="flex flex-col space-y-1 pb-4 border-b last:border-0 last:pb-0">
+                <div key={session.session_id} className="flex flex-col space-y-1 pb-4 border-b last:border-0 last:pb-0">
                   <div className="flex justify-between items-center">
                     <span className="font-medium">{session.users?.email || 'Guest'}</span>
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${

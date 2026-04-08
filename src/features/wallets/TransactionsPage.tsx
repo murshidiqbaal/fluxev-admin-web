@@ -3,7 +3,6 @@ import { format } from 'date-fns';
 import { 
   ArrowUpRight, 
   ArrowDownRight, 
-  History, 
   Search,
   RefreshCw,
   Filter
